@@ -1,9 +1,13 @@
 syntax = "proto3";
 package com.example.grpc;
 
+message Tender {
+  string link = 1;
+  string domain = 2;
+}
 
 message AddRequest {
-  repeated string link = 1;
+  repeated Tender tenders = 1;
 }
 
 message AddResponse {
