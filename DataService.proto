@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.example.grpc;
+
+
+message AddRequest {
+  repeated string link = 1;
+}
+
+message AddResponse {
+  int32 count = 1;
+}
+
+service DataService {
+  rpc AddLinks(AddRequest) returns (AddResponse);
+}
