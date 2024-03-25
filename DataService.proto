@@ -15,5 +15,5 @@ message AddResponse {
 }
 
 service DataService {
-  rpc AddLinks(AddRequest) returns (AddResponse);
+  rpc AddLinks(stream AddRequest) returns (AddResponse);
 }
