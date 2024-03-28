@@ -33,5 +33,5 @@ message AddParsedDataResponse {
 
 service DataService {
   rpc AddLinks(stream AddRequest) returns (AddResponse);
-  rpc AddParsedData(AddParsedDataRequest) returns(AddParsedDataResponse);
+  rpc AddParsedData(stream AddParsedDataRequest) returns(AddParsedDataResponse);
 }
