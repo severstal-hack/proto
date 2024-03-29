@@ -6,6 +6,14 @@ message Tender {
   string domain = 2;
 }
 
+message TenderItem {
+  string link = 1;
+  string domain = 2;
+  string name = 3;
+  string count = 4;
+  string unit = 5;
+}
+
 message AddRequest {
   repeated Tender tenders = 1;
 }
@@ -27,7 +35,17 @@ message GetProductsResponse {
   repeated Product products = 1;
 }
 
+
+message MatchRequest {
+  string phrase = 1;
+}
+
+message MatchResponse {
+  repeated TenderItem items = 1;
+}
+
 service DataService {
   rpc AddLinks(stream AddRequest) returns (AddResponse);
   rpc GetProducts(EmptyRequest) returns(GetProductsResponse);
+  rpc Match(MatchRequest) returns(MatchResponse);
 }
